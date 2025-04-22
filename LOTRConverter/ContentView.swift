@@ -91,6 +91,8 @@ struct ContentView: View {
                 
                 HStack {
                     Spacer()
+                    
+                    
                     Button {
                         showExchangeInfo.toggle()
                     } label: {
@@ -99,13 +101,16 @@ struct ContentView: View {
                             .foregroundStyle(.white)
                     }
                     .padding(.trailing)
+                    
+                    }
                 }
-            }
+            
 //            .border(.blue)
-            
-            
         }
+        .sheet(isPresented: $showExchangeInfo) {
+            ExchangeInfo()
     }
+}
 }
 
 #Preview {
